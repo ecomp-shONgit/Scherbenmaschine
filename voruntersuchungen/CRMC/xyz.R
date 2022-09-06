@@ -120,22 +120,39 @@ function( da, clos, exp = 1.5, scale = TRUE ){
 }
 
 memetadata <- fread("TKAMetadaten.csv", key="Lab.-No.")
-
 xrfdata <- fread("TKAXRF.csv", key="Lab.-No.")
 
-xrfdata <- fread("TKAXRF.csv", key="Lab.-No.")
 mirdata <- merge( xrfdata, memetadata )
-merdata<- mirdata[ware=="Terra Nigra" | ware=="Terra Sigillata", ]
+
+#Güte der Datenbank was die Konsistenz der Notation der Warenart angeht ist zweifelhaft
+#merdata <- mirdata[ware=="Terra Nigra" | ware=="Terra Sigillata", ] 
+merdata <- mirdata[ grepl("Terra",ware ), ] 
+#Terra Sigillata
+#weißer Überzug
+# roter Überzug
+#orangerote Engobe
+#Gebrauchskeramik
+#Wetterauer Ware
+#weißtonige Ware
+#marmorierte Ware
+#Glatte Sigillata
+#Terrakotte
+#Goldglimmerware
+#Glanzton
+#Irdenware
+#Eifelware
 
 #merdata[is.na(merdata)] <- 0.0 #remove NA fealds by setting them zero
 
 print(nrow(merdata))
-#columnsfordistcomp <- c("SiO2", "TiO2", "Al2O3", "Fe2O3", "MnO", "MgO", "CaO", "Na2O", "K2O", "P2O5", "V", "Cr", "Ni", "Cu", "Zn", "Rb", "Sr", "Y", "Zr", "Nb", "Ba", "La", "Ce", "Pb", "Th")
+#columnsfordistcomp <- c("SiO2", "TiO2", "Al2O3", "Fe2O3", "MnO", "MgO", "CaO", "Na2O", "K2O", "P2O5", "V", "Cr", "Ni", "Cu", "Zn", "Rb", "Sr", "Y", "Zr", "Nb", "Ba", "La", "Ce", "Pb", "Th") #alle
 #columnsfordistcomp <- c("SiO2","TiO2", "Al2O3", "Fe2O3", "MnO", "MgO", "CaO", "Na2O", "K2O", "P2O5") #alle Oxide
 #columnsfordistcomp <- c("TiO2", "Al2O3", "Fe2O3", "MnO", "MgO") #metalloxide
 #columnsfordistcomp <- c("SiO2", "CaO", "Na2O", "K2O", "P2O5") #nm und halbm oxide
 #columnsfordistcomp <- c("SiO2", "CaO", "Na2O", "K2O", "MgO", "Fe2O3", "Al2O3" ) #selection from paper
-columnsfordistcomp <- c("SiO2", "CaO", "Na2O", "MgO", "Al2O3" )
+columnsfordistcomp <- c("SiO2", "CaO", "Na2O", "MgO" ) #besser
+#columnsfordistcomp <- c("SiO2", "CaO", "Na2O", "K2O" ) #schlechter
+#columnsfordistcomp <- c("SiO2", "CaO", "Na2O" )
 #columnsfordistcomp <- c("V", "Cr", "Ni", "Cu", "Zn", "Rb", "Sr", "Y", "Zr", "Nb", "Ba", "La", "Ce", "Pb", "Th") #spurenelemente - weder canberra not euklide gut
 
 #containning the abs messured values
@@ -147,7 +164,7 @@ print(nrow(dd))
 
 
 
-distancematrix <- dist(dd, method = "manhattan") 
+distancematrix <- dist(dd, method = "euclidean") 
 #distancematrix <- wasser( merdata, columnsfordistcomp )
 print(nrow(distancematrix))
 #print( is.na(distancematrix))
@@ -161,5 +178,5 @@ hc$labels <- labe
 png("plotdendogram.png",width=10000,height=800)
 
 par(cex=1,font=5)
-plot(hc, hang = -1, ylab = "Distance", main = "Dendrogramm der chem. Zusammensetzung, mit Warenarten gelabelt.")
+plot(hc, hang = -1, ylab = "Distance", main = "Dendrogramm der chem. Zusammensetzung (SiO2, CaO, Na2O,MgO), mit Warenarten gelabelt.")
 dev.off()
