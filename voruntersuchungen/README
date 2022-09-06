@@ -1,14 +1,21 @@
-Voruntersuchungen zum Entwurf einer Scherbenklassifikation
+# Voruntersuchungen zum Entwurf einer Scherbenklassifikation
 
-#pRFA / XFA Dataset
+## pRFA / XFA Dataset
 CRMC: Ceramic Atlas of central Europe, see folder for R script and visualization
 
-#3D Objects 
+## 3D Objects 
 3D Models (https://archaeologydataservice.ac.uk/archives/view/archaide_2019/overview.cfm) from the Archaide Projekt (http://www.archaide.eu/).
 Rust-Tool to evaluate the change of curvature along two main axes of a 3D models.
+
+![Mainaxis 1](tangentebackRhodianTypeD123.png)
+![Mainaxis 2](tangenteleftRhodianTypeD123.png)
 
 Compute the Wasserstein 1D distance to compare the resulting vectors among all models and a tSNE embedding implementation 
 to get a grafical representation of the distance matrix.
 
 The tSNE Cluster output is turned into a interactive Webpage (mouseover of the cluster points gives the model name wich is to the same time the type of amphora, 
 click on a cluster point opens up the dataset and the 3D model): http://ecomparatio.net/~khk/scherben/
+
+Beispiel des Clusters:
+![](doesitcluster.png)
+![](doesitclusterwol.png)
