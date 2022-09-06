@@ -5,6 +5,8 @@
 
 # Voruntersuchungen zum Entwurf einer Scherbenklassifikation
 
+Die Voruntersuchungen dienen dazu zerstörungsfreie Analysemethoden zu erörtern, deren Messwerte zur Automatisierung / Unterstützung von Klassifikationsaufgaben im Zuge der archäologischen Befundung dienlich gemacht werden können.
+
 ## 1. pRFA / XFA Datensatz  <a name="crmcana"></a>
 *(Im Ornder CRMC)*
 
