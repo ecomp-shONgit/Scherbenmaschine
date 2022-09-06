@@ -39,6 +39,9 @@ Die Kombination Euklidische Distanz und das Profil: "SiO2", "CaO", "Na2O", "MgO"
 
 Das Dendrogramm weißt die Terra Nigra und die Terra Sigillata auf zwei Seiten mit deutlichem Übergangsbereich aus. Unserer Auffassung nach bedeutet dies, dass es zu erwägen ist die Profile als Indikatoren für die Warenart zu verwenden. Im Rahmen der Arbeit mit gestörten Daten ist es nahe liegend mit weiteren Messwerten aus zerstörungsfreien Methoden diese Ergebnisse zu korrigieren. Es bleibt ebenfalls die Möglichkeit offen die Zusammensetzung in Bezug zur Brennweise und Magerung zu setzen, um Profile besser beurteilen zu können. Unsere Darstellung hier ist nichts weiter als eine Skizze, die zeigt dass sich auch im naiven Fall Andeutungen auf die Verwendbarkeit der Profile abzeichnen.
 
+
+![Dendrogramm des Profils "SiO2", "CaO", "Na2O", "MgO"](CRMC/TerraNigra-TerraSigillata-euk-nmox+mgo.png)
+
 ## 2. 3D Objekte <a name="3dmodana"></a>
 
 *(Im Ordner 3D-Archaide)* 
