@@ -1,14 +1,14 @@
 
 # Inhalt
-1. [Röntgenfluoroszenzanalyse Datensatz](#crmcana)
+1. [Röntgenfluoreszenzanalyse Datensatz](#crmcana)
 3. [Analyse von 3D Modellen](#3dmodana)
 
 # Voruntersuchungen zum Entwurf einer Scherbenklassifikation
 
-## pRFA / XFA Dataset  <a name="crmcana"></a>
+## 1. pRFA / XFA Datensatz  <a name="crmcana"></a>
 *(Im Ornder CRMC)*
 
-### Datenmaterial und inhaltliche Ausgangslage
+### 1.1 Datenmaterial und inhaltliche Ausgangslage
 
 Der Umstand, dass die Sammlung keine pRFA Analyse darstellt, sondern Proben in ihrer körperlichen Gänze (WD-XRF) berücksichtigt werden, muss als Beschränkung der Aussagen, die hier getroffen werden kann, berücksichtigt werden.
 
@@ -22,7 +22,7 @@ major elements expressed as oxides, which are dictated by the kind of clay and t
 3. This is to be checked with data
 obtained by pXRF (portable energy-dispersive XRF) as also for data obtained by ICP-OES, ICP-MS and NAA.
 
-### Vorgehen
+### 1.2 Vorgehen
 
 Grundsätzlich ging es um einen intuitiven Zugang und die Frage, gruppiert ein Profil die Funde der Datenbank so, dass die Warenart eine Gruppe bildet? Zur Umsetzung der Fragestellung benutzen wir ein R Skript, das die Daten aus den CSV Dateien einließt und den Vergleich zwischen Terra Sigillata und Terra Nigra anstellt. Der Vergleich von Profilen gelingt so: Jedes Profil ist eine Reihe von Zahlen, die den Messwert darstellen. Jede Stelle in der List steht für immer das gleiche Element/Molekül. Anschließend werden diese Listen verglichen, dabei werden alle Zahlenwerte gleichzeitig berücksichtigt. Der Vergleich wird mittels einer Zahl ausgedrückt, die entweder aus der Berechnung der Euklidischen Distanz (Manhattan, Canberra, Wasserstein) oder einer anderen Bezifferung dieser Art ableitet. Anschließend werden die Proben danach gruppiert welche verglichen zur einen den kleinsten Zahlenwert aufweist. Dabei genügt es dieses Vorgehen als Dendrogramm darzustellen, um eine lesbare Ausgabe der Zahlenverhältnisse zu bekommen.
 
@@ -35,19 +35,19 @@ Aus der Literatur: "SiO2", "CaO", "Na2O", "K2O", "MgO", "Fe2O3", "Al2O3"
 
 Die Kombination Euklidische Distanz und das Profil: "SiO2", "CaO", "Na2O", "MgO" ergab ein ziemlich deutliches Dendrogramm.
 
-### Ergebnis
+### 1.3 Ergebnis
 
 Das Dendrogramm weißt die Terra Nigra und die Terra Sigillata auf zwei Seiten mit deutlichem Übergangsbereich aus. Unserer Auffassung nach bedeutet dies, dass es zu erwägen ist die Profile als Indikatoren für die Warenart zu verwenden. Im Rahmen der Arbeit mit gestörten Daten ist es nahe liegend mit weiteren Messwerten aus zerstörungsfreien Methoden diese Ergebnisse zu korrigieren. Es bleibt ebenfalls die Möglichkeit offen die Zusammensetzung in Bezug zur Brennweise und Magerung zu setzen, um Profile besser beurteilen zu können. Unsere Darstellung hier ist nichts weiter als eine Skizze, die zeigt dass sich auch im naiven Fall Andeutungen auf die Verwendbarkeit der Profile abzeichnen.
 
-## 3D Objects <a name="3dmodana"></a>
+## 2. 3D Objekte <a name="3dmodana"></a>
 
 *(Im Ordner 3D-Archaide)* 
 
-### Datenmaterial und Ausgangslage
+### 2.1 Datenmaterial und Ausgangslage
 
 3D Models (https://archaeologydataservice.ac.uk/archives/view/archaide_2019/overview.cfm) vom Archaide Projekt (http://www.archaide.eu/).
 
-### Vorgehen
+### 2.2 Vorgehen
 
 Rust-Tool zur Evaluierung des Kurvenverlaufs auf der Oberfläche der 3D Modelle entlang zweier Hauptachsen.
 
@@ -56,7 +56,7 @@ Rust-Tool zur Evaluierung des Kurvenverlaufs auf der Oberfläche der 3D Modelle 
 
 Berechnung des Wasserstein-1D Maß zum Vergleich der Kurvenverläufe der Modelle und tSNE Einbettung zur Herstellung einer graphsichen Repräsentation der Distanzmatrix.
 
-### Ergebnis
+### 2.3 Ergebnis
 
 Das tSNE Cluster Ergebnis wurde in eine interactive Webseite umgewandelt (Mouseover der Cluster-Punkte zeigt den Modellnamen / Amphorentyp, 
 Klick auf einen Cluster-Pukt öffnet den Datensatz des 3D model in einem Browser-Tab): http://ecomparatio.net/~khk/scherben/
