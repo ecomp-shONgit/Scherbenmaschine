@@ -1,7 +1,7 @@
 Voruntersuchungen zum Entwurf einer Scherbenklassifikation
 
-pRFA / RFA
-- CRMC: Ceramic Atlas of central Europe
+# pRFA / XFA Dataset
+- CRMC: Ceramic Atlas of central Europe, see folder for R script and visualization
 
-3D Objects 
+# 3D Objects 
 - 3D Models from the Archaide Projekt, Rust Tool to evaluate the change of curvature along two main axes of a 3D models, a Wasserstein 1D distance to compare the resulting vectors among all models and a tSNE embedding implementation to get a grafical representation of the distance matrix.
