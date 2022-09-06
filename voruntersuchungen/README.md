@@ -27,11 +27,15 @@ obtained by pXRF (portable energy-dispersive XRF) as also for data obtained by I
 Grundsätzlich ging es um einen intuitiven Zugang und die Frage, gruppiert ein Profil die Funde der Datenbank so, dass die Warenart eine Gruppe bildet? Zur Umsetzung der Fragestellung benutzen wir ein R Skript, das die Daten aus den CSV Dateien einließt und den Vergleich zwischen Terra Sigillata und Terra Nigra anstellt. Der Vergleich von Profilen gelingt so: Jedes Profil ist eine Reihe von Zahlen, die den Messwert darstellen. Jede Stelle in der List steht für immer das gleiche Element/Molekül. Anschließend werden diese Listen verglichen, dabei werden alle Zahlenwerte gleichzeitig berücksichtigt. Der Vergleich wird mittels einer Zahl ausgedrückt, die entweder aus der Berechnung der Euklidischen Distanz (Manhattan, Canberra, Wasserstein) oder einer anderen Bezifferung dieser Art ableitet. Anschließend werden die Proben danach gruppiert welche verglichen zur einen den kleinsten Zahlenwert aufweist. Dabei genügt es dieses Vorgehen als Dendrogramm darzustellen, um eine lesbare Ausgabe der Zahlenverhältnisse zu bekommen.
 
 Für die Profil- und Distanz-Maß-Kombinationen wurden Manhattan, Euklid, Canberra und Wasserstein in Betracht gezogen (hier in entsprechenden Ordnern als Zwischenergebnisse angegeben). Außerdem wurden folgende Profile erwogen:
-Alle: "SiO2", "TiO2", "Al2O3", "Fe2O3", "MnO", "MgO", "CaO", "Na2O", "K2O", "P2O5", "V", "Cr", "Ni", "Cu", "Zn", "Rb", "Sr", "Y", "Zr", "Nb", "Ba", "La", "Ce", "Pb", "Th"
-Alle Oxide: "SiO2","TiO2", "Al2O3", "Fe2O3", "MnO", "MgO", "CaO", "Na2O", "K2O", "P2O5"
-Metalloxide: "TiO2", "Al2O3", "Fe2O3", "MnO", "MgO"
-Nichtmetall und Halbmetalloxide: "SiO2", "CaO", "Na2O", "K2O", "P2O5"
-Aus der Literatur: "SiO2", "CaO", "Na2O", "K2O", "MgO", "Fe2O3", "Al2O3"
+- Alle: "SiO2", "TiO2", "Al2O3", "Fe2O3", "MnO", "MgO", "CaO", "Na2O", "K2O", "P2O5", "V", "Cr", "Ni", "Cu", "Zn", "Rb", "Sr", "Y", "Zr", "Nb", "Ba", "La", "Ce", "Pb", "Th"
+
+- Alle Oxide: "SiO2","TiO2", "Al2O3", "Fe2O3", "MnO", "MgO", "CaO", "Na2O", "K2O", "P2O5"
+
+- Metalloxide: "TiO2", "Al2O3", "Fe2O3", "MnO", "MgO"
+
+- Nichtmetall und Halbmetalloxide: "SiO2", "CaO", "Na2O", "K2O", "P2O5"
+
+- Aus der Literatur: "SiO2", "CaO", "Na2O", "K2O", "MgO", "Fe2O3", "Al2O3"
 
 Die Kombination Euklidische Distanz und das Profil: "SiO2", "CaO", "Na2O", "MgO" ergab ein ziemlich deutliches Dendrogramm.
 
@@ -62,7 +66,7 @@ Berechnung des Wasserstein-1D Maß zum Vergleich der Kurvenverläufe der Modelle
 ### 2.3 Ergebnis
 
 Das tSNE Cluster Ergebnis wurde in eine interactive Webseite umgewandelt (Mouseover der Cluster-Punkte zeigt den Modellnamen / Amphorentyp, 
-Klick auf einen Cluster-Pukt öffnet den Datensatz des 3D model in einem Browser-Tab): http://ecomparatio.net/~khk/scherben/
+Klick auf einen Cluster-Punkt öffnet den Datensatz des 3D model in einem Browser-Tab): http://ecomparatio.net/~khk/scherben/
 
 Beispiel des Clusters:
 ![](doesitcluster.png)
